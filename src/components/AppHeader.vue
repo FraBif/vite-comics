@@ -5,9 +5,16 @@
         </div>
         <div class="navbar-container">
             <ul>
-                <li v-for="">
-
-                </li>
+               <li>characters</li>
+               <li class="active">comics</li>
+               <li>movies</li>
+               <li>tv</li>
+               <li>game</li>
+               <li>collectibles</li>
+               <li>videos</li>
+               <li>fans</li>
+               <li>news</li>
+               <li>shop</li>
             </ul>
         </div>
     </header>
@@ -39,5 +46,29 @@ export default {
 
 header{
     display: flex;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-container{
+    width: 65%;
+    padding: 1.2rem;
+    
+}
+
+li{
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    
+}
+
+.active{
+    border-bottom: 6px solid cornflowerblue;
 }
 </style>
