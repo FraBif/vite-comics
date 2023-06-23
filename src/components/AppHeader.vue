@@ -1,74 +1,111 @@
 <template>
-    <header>
-        <div class="logo-container">
-            <img src="../assets/img/dc-logo.png" alt="logo-dc" class="logo">
+    <header class=" wrapper">
+        <div>
+            <img src="../assets/img/dc-logo.png" alt="">
         </div>
-        <div class="navbar-container">
-            <ul>
-               <li>characters</li>
-               <li class="active">comics</li>
-               <li>movies</li>
-               <li>tv</li>
-               <li>game</li>
-               <li>collectibles</li>
-               <li>videos</li>
-               <li>fans</li>
-               <li>news</li>
-               <li>shop</li>
+        <div>
+            <ul class="flex">
+                <li v-for="links in headerNavbar" :class="links.selected ? 'selected' : ''">
+                {{ links.text }}
+                </li>
             </ul>
         </div>
     </header>
 </template>
 
 <script>
-export default {
-    
-    name: 'AppHeader',
-    data(){
-        return{
-            navbarElements : ["characters" , "comics" , "movies" , "tv" , "game" , "collectibles" , "videos" , "fans" , "news" , "shop"]
+export default{
+        data() {
+            return{
+                headerNavbar : [
+                    {
+                        text: "CHARACTERS",
+                        link: "#",
+                        selected: false
+                    },
+                    {
+                        text: "COMICS",
+                        link: "#",
+                        selected: true
+                    },
+                    {
+                        text: "MOVIES",
+                        link: "#",
+                        selected: false
+                    },
+                    {
+                        text: "TV",
+                        link: "#",
+                        selected: false
+                    },
+                    {
+                        text: "GAMES",
+                        link: "#",
+                        selected: false
+                    },
+                    {
+                        text: "COLLECTIBLES",
+                        link: "#",
+                        selected: false
+                    },
+                    {
+                        text: "VIDEOS",
+                        link: "#",
+                        selected: false
+                    },
+                    {
+                        text: "FANS",
+                        link: "#",
+                        selected: false
+                    },
+                    {
+                        text: "NEWS",
+                        link: "#",
+                        selected: false
+                    },
+                    {
+                        text: "SHOP",
+                        link: "#",
+                        selected: false
+                    },
+                ],
+
+            }
         }
     }
-}
 </script>
 
-<style lang="scss" scoped>
-.logo-container{
-    
-    width: 35%;
-    text-align: center;
-    padding: 1rem;
+<style scoped>
+
+
+header{
+   
+    margin: auto;
+    padding: 15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+
+   
+
 }
 
-.logo{
+img{
     height: 80px;
 }
 
-header{
-    display: flex;
-}
-
-ul{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.navbar-container{
-    width: 65%;
-    padding: 1.2rem;
-    
-}
-
 li{
-    margin-right: 1rem;
-    font-size: 1.2rem;
-    
+    padding-left: 30px;
+    font-size: .85rem;
+    font-weight: 700;
+    color: #1C1C1C;
+    list-style: none;
 }
 
-.active{
-    border-bottom: 6px solid cornflowerblue;
+.selected{
+    color: #0282F9;
+}
+    
+ul{
+    display: flex;
 }
 </style>
